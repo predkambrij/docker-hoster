@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+  devbox:
+    image: predkambrij/docker-hoster
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock
+      - /etc/hosts:/tmp/hosts
+
